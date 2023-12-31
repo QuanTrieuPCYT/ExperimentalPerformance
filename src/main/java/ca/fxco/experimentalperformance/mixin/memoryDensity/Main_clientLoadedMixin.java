@@ -13,16 +13,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Main.class)
 public class Main_clientLoadedMixin {
 
-
     @Inject(
-            method = "main([Ljava/lang/String;Z)V",
+            method = "main([Ljava/lang/String;)V",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/MinecraftClient;shouldRenderAsync()Z",
                     shift = At.Shift.BEFORE
             )
     )
-    private static void loadAllMixinsThenShouldRenderAsync(String[] args, boolean optimizeDataFixer, CallbackInfo ci) {
+    private static void loadAllMixinsThenShouldRenderAsync(String[] args, CallbackInfo ci) {
         ExperimentalPerformance.forceLoadAllMixins();
     }
+
 }

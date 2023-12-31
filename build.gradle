@@ -17,10 +17,12 @@ repositories {
         name = 'Jitpack'
         url 'https://jitpack.io/'
     }
+    /*
     maven {
         name = 'auoeke'
         url = 'https://maven.auoeke.net'
     }
+    */
 }
 
 dependencies {
@@ -29,8 +31,8 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "net.gudenau.lib:unsafe:${project.unsafe_version}"
-    include "net.gudenau.lib:unsafe:${project.unsafe_version}"
+    modImplementation "net.auoeke:unsafe:${project.unsafe_version}"
+    include "net.auoeke:unsafe:${project.unsafe_version}"
 
     modImplementation "org.openjdk.jol:jol-core:${project.jol_version}"
     include "org.openjdk.jol:jol-core:${project.jol_version}"
